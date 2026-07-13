@@ -12,6 +12,10 @@ Requires Python 3.11+.
 
 from __future__ import annotations
 
+from backend.logger import LoggerFactory
+
+logger = LoggerFactory.create_logger(__name__)
+
 
 class VideoFactory:
     """Top-level coordinator for the AI Video Factory.
@@ -38,7 +42,7 @@ class VideoFactory:
 
 def main() -> None:
     """Application entry point."""
-    print("AI Video Factory starting...")
+    logger.info("AI Video Factory starting...")
 
 
 if __name__ == "__main__":
