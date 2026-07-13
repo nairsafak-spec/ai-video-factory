@@ -12,6 +12,7 @@ Requires Python 3.11+.
 
 from __future__ import annotations
 
+from backend.health import HealthChecker
 from backend.logger import LoggerFactory
 
 logger = LoggerFactory.create_logger(__name__)
@@ -43,6 +44,11 @@ class VideoFactory:
 def main() -> None:
     """Application entry point."""
     logger.info("AI Video Factory starting...")
+
+    results = HealthChecker().run_all_checks()
+    logger.info("Health checks — overall: %s", results["overall"].upper())
+    for check in results["checks"]:
+        logger.info("  [%s] %s: %s", check["status"].upper(), check["name"], check["detail"])
 
 
 if __name__ == "__main__":
