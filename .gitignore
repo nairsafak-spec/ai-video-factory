@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Vendored third-party source and virtualenvs are NOT tracked in our repo.
+# Only our own notes (e.g. INSTALLATION_RESULT.md) are kept.
+third_party/langgraph/*
+!third_party/langgraph/INSTALLATION_RESULT.md
